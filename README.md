@@ -1,7 +1,8 @@
 # 🚀 Road Seqmentation Task With A Segmentation Dataset Available!
 About
 =====
-What is Image Segmentation?
+What is Image Segmentation? 
+
 At its core, image segmentation is the process of partitioning a digital image into multiple segments, or "regions of interest" (ROIs). The goal is to simplify the image's representation into something more meaningful and easier to analyze.
 This project is based on these main resources:
 1) <b>U-Net<b> : [U-Net: Convolutional Networks for Biomedical Image Segmentation](https://arxiv.org/abs/1505.04597).
