@@ -1,1 +1,3 @@
-# Road-Segmentation-Implemented-With-Pytorch
+# road_seg (skeleton)
+
+Placeholder skeleton for MLOps project.

@@ -1,0 +1,16 @@
+# Data / image handling
+numpy==2.0.2
+opencv-python==4.12.0
+pandas==2.2.2
+matplotlib==3.10.0
+pillow==11.3.0
+
+# Kaggle dataset helper
+kagglehub==0.3.13
+
+# PyTorch utilities
+torch-snippets==0.558
+torch-summary>=1.4.5
+
+# Jupyter / notebook helpers (optional but matches your env)
+ipython==7.34.0
