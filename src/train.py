@@ -90,7 +90,7 @@ def main():
         # Save best model
         if val_dice > best_dice:
             best_dice = val_dice
-            save(model, "models/unet_best.pt")
+            save_model(model, "models/unet_best.pt")
             print(f"✅ Saved new best model (Dice: {best_dice:.4f})")
 
     print("🏁 Training complete!")
