@@ -9,16 +9,16 @@ import glob as glob
 Train_Images = dataset/train/images
 Val_Images = dataset/val/images
 
-Train_Masks = dataset/train/mask
-Val_masks = dataset/val/mask
+Train_Masks = dataset/train/masks
+Val_masks = dataset/val/masks
 
 Train_Annotations = dataset/train/annotations
 Val_Annotations = dataset/val/annotations
 """
 image_train_path = Path("dataset/train/images")
 image_val_path = Path("dataset/val/images")
-mask_train_path = Path("dataset/train/mask")
-mask_val_path = Path("dataset/val/mask")
+mask_train_path = Path("dataset/train/masks")
+mask_val_path = Path("dataset/val/masks")
 
 # --- Collect image files ---
 image_train_path_list = sorted([p for p in image_train_path.glob("*") if p.suffix.lower() in ['.jpg', '.png', '.jpeg']])

@@ -11,8 +11,8 @@ device = torch.device("cuda" if torch.cuda.is_available() else
 Train_Images = dataset/train/images
 Val_Images = dataset/val/images
 
-Train_Masks = dataset/train/mask
-Val_masks = dataset/val/mask
+Train_Masks = dataset/train/masks
+Val_masks = dataset/val/masks
 
 Train_Annotations = dataset/train/annotations
 Val_Annotations = dataset/val/annotations
@@ -30,7 +30,7 @@ class RoadSegmentationDataset(Dataset):
 
     def __getitem__(self,index):
         img_path = os.path.join(self.image_dir, self.images[index])
-        mask_path = os.path.join(self.mask_dir, self.images[index])
+        mask_path = os.path.join(self.mask_dir, self.masks[index])
         img = cv2.imread(str(img_path))
         img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
         img = cv2.resize(img, (224, 224))

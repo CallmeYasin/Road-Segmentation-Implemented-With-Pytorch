@@ -7,7 +7,7 @@ import torch.optim as optim
 from tqdm import tqdm
 
 from src.data import get_dataloaders
-from src.model import UNet, save
+from src.model import UNet, save_model
 from src.metrics import dice_score
 
 # ---------------------------------------
