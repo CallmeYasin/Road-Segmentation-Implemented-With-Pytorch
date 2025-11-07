@@ -12,12 +12,5 @@ lint:
 	flake8 .
 	mypy .
 
-build:
-	docker-compose build
-
-run:
-	docker-compose up -d
-
 clean:
 	rm -rf __pycache__ *.pyc
-	docker-compose down
