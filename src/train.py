@@ -22,7 +22,7 @@ DEVICE = torch.device("cuda" if torch.cuda.is_available() else
 
 # dataset paths (change these to your actual folders)
 TRAIN_IMG_DIR = "dataset/train/images"
-TRAIN_MASK_DIR = "dataset/train/mask"
+TRAIN_MASK_DIR = "dataset/train/masks"
 VAL_IMG_DIR = "dataset/val/images"
 VAL_MASK_DIR = "dataset/val/masks"
 
