@@ -19,7 +19,7 @@ Train_Annotations = dataset/train/annotations
 Val_Annotations = dataset/val/annotations
 """
 # -----------------------------
-# 1️⃣ Dataset Class
+# Dataset Class
 # -----------------------------
 class RoadSegmentationDataset(Dataset):
     def __init__(self, image_dir, mask_dir, train=True, image_size=(224, 224)):
@@ -78,7 +78,7 @@ class RoadSegmentationDataset(Dataset):
         return image, mask
 
 # -----------------------------
-# 2️⃣ Dataloader function
+# Dataloader function
 # -----------------------------
 def get_dataloaders(train_img_dir, train_mask_dir, val_img_dir, val_mask_dir,
                     batch_size=4, num_workers=0, image_size=(224, 224)):
