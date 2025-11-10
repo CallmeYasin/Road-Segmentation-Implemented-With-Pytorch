@@ -10,7 +10,7 @@ from src.data import get_dataloaders
 from src.metrics import dice_score
 
 DEVICE = torch.device("cuda" if torch.cuda.is_available() else
-                      "mps" if torch.backend.mps.is_available() else "cpu")
+                      "mps" if torch.backends.mps.is_available() else "cpu")
 
 MODEL_PATH = "models/unet_best.pt"
 VAL_IMG_DIR = "dataset/val/images"
@@ -19,15 +19,14 @@ BATCH_SIZE = 2
 NUM_WORKERS = 0
 
 def evaluate():
-    print("🔍 Loading model for evaluation...")
+    print("Loading model for evaluation...")
     model = load_model(UNet, MODEL_PATH, device=DEVICE, out_channels=1)
 
     _, val_loader = get_dataloaders(
         VAL_IMG_DIR, VAL_MASK_DIR,
         VAL_IMG_DIR, VAL_MASK_DIR,
         batch_size=BATCH_SIZE,
-        num_workers=NUM_WORKERS
-    )
+        num_workers=NUM_WORKERS)
 
     model.eval()
     criterion = nn.BCEWithLogitsLoss()
@@ -43,8 +42,8 @@ def evaluate():
     avg_loss = val_loss / len(val_loader)
     avg_dice = val_dice / len(val_loader)
 
-    print(f"\n📊 Validation Loss: {avg_loss:.4f}")
-    print(f"🏁 Dice Score: {avg_dice:.4f}")
+    print(f"\n Validation Loss: {avg_loss:.4f}")
+    print(f" Dice Score: {avg_dice:.4f}")
 
     # visualize one prediction
     imgs, masks = next(iter(val_loader))
