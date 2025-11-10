@@ -11,7 +11,7 @@ from model import UNet, load_model
 
 DEVICE = torch.device("cuda" if torch.cuda.is_available() else
                       "mps" if torch.backends.mps.is_available() else "cpu")
-MODEL_PATH = "models/unet_best.pt"
+MODEL_PATH = "models/unet_best.pth"
 IMG_SIZE = (224, 224)
 
 # Load model once at startup
