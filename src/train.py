@@ -8,9 +8,7 @@ from data import get_dataloaders
 from model import UNet, save_model
 from metrics import dice_score
 
-# ---------------------------------------
-# Configuration
-# ---------------------------------------
+
 EPOCHS = 10
 BATCH_SIZE = 4
 LR = 1e-4
@@ -24,9 +22,6 @@ TRAIN_MASK_DIR = "dataset/train/masks"
 VAL_IMG_DIR = "dataset/val/images"
 VAL_MASK_DIR = "dataset/val/masks"
 
-# ---------------------------------------
-# Training Loop
-# ---------------------------------------
 def train_one_epoch(model, loader, optimizer, criterion):
     model.train()
     epoch_loss = 0
@@ -47,7 +42,6 @@ def train_one_epoch(model, loader, optimizer, criterion):
 
     return epoch_loss / len(loader), epoch_dice / len(loader)
 
-
 def validate_one_epoch(model, loader, criterion):
     model.eval()
     val_loss, val_dice = 0, 0
@@ -61,15 +55,13 @@ def validate_one_epoch(model, loader, criterion):
 
     return val_loss / len(loader), val_dice / len(loader)
 
-
 def main():
     print("Starting training...")
     train_loader, val_loader = get_dataloaders(
         TRAIN_IMG_DIR, TRAIN_MASK_DIR,
         VAL_IMG_DIR, VAL_MASK_DIR,
         batch_size=BATCH_SIZE,
-        num_workers=NUM_WORKERS
-    )
+        num_workers=NUM_WORKERS)
 
     model = UNet(out_channels=1).to(DEVICE)
     optimizer = optim.Adam(model.parameters(), lr=LR)
