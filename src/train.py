@@ -13,8 +13,7 @@ from metrics import dice_coeff, dice_loss
 NUM_WORKERS = 0
 DEVICE = torch.device(
     "cuda" if torch.cuda.is_available() else
-    "mps" if torch.backends.mps.is_available() else "cpu"
-)
+    "mps" if torch.backends.mps.is_available() else "cpu")
 
 # dataset paths (change to your actual folders)
 TRAIN_IMG_DIR = "dataset/train/images"
