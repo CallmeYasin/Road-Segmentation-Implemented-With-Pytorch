@@ -1,3 +1,5 @@
+import os
+
 import torch
 import torch.nn as nn
 import torch.optim as optim
@@ -75,9 +77,23 @@ def save_model(model,path):
 kwargs = {in_channels:x,
             out_chanels:y}
 """
-def load_model(model_class, path, device=device, **kwargs):
+def load_model(model_class, path=None, device=None, **kwargs):
+    """
+    Loads a model from a checkpoint file (.pth) or initializes a new one.
+
+    Args:
+        model_class: The class of your model (e.g., UNet).
+        path (str or None): Path to .pth file. If None, creates a new model.
+        device (torch.device): Device to load to.
+        **kwargs: Extra keyword arguments to pass to model_class.
+    """
     model = model_class(**kwargs)
-    model.load_state_dict(torch.load(path, map_location=device,weights_only=True))
+    if path and os.path.exists(path):
+        print(f"Loading weights from: {path}")
+        state = torch.load(path, map_location=device)
+        model.load_state_dict(state)
+    else:
+        print("No checkpoint found — initializing new model.")
+
     model.to(device)
-    model.eval()
     return model
