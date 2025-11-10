@@ -55,7 +55,6 @@ def make_binary_masks(image_list, split_name, mask_dir):
                 coords[:, 1] *= h
                 coords = coords.astype(np.int32)
 
-                # Fill polygon for each class region
                 cv2.fillPoly(mask, [coords], color=cls + 1)
 
         out_path = mask_dir / f"{img_file.stem}.png"
@@ -66,4 +65,3 @@ def make_binary_masks(image_list, split_name, mask_dir):
 # --- Run for train and val splits ---
 make_binary_masks(image_train_path_list, "train", mask_train_path)
 make_binary_masks(image_val_path_list, "val", mask_val_path)
-
