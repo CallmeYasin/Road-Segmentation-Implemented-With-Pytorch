@@ -77,7 +77,7 @@ kwargs = {in_channels:x,
 """
 def load_model(model_class, path, device=device, **kwargs):
     model = model_class(**kwargs)
-    model.load_state_dict(torch.load(path, map_location=device))
+    model.load_state_dict(torch.load(path, map_location=device,weights_only=True))
     model.to(device)
     model.eval()
     return model
