@@ -141,7 +141,7 @@ def main():
         if val_dice > best_dice:
             best_dice = val_dice
             save_model(model, "models/unet_best.pth")
-            print(f"✅ Saved new best model (Dice: {best_dice:.4f})")
+            print(f"Saved new best model (Dice: {best_dice:.4f})")
 
     print("\nTraining complete!")
 
