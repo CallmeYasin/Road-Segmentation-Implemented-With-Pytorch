@@ -1,10 +1,11 @@
 """Model module - skeleton"""
+import torch
 import torch.nn as nn
 import torch.optim as optim
 import torch.nn.functional as F
 from torchvision.models import vgg16_bn
 device = torch.device("cuda" if torch.cuda.is_available() else
-                      "mps" if torch.backend.mps.is_available() else "cpu")
+                      "mps" if torch.backends.mps.is_available() else "cpu")
 
 def conv(in_channels,out_channels):
   return nn.Sequential(
