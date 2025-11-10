@@ -1,7 +1,3 @@
-"""Serve (FastAPI) - skeleton"""
-"""
-serve.py — FastAPI service for UNet road segmentation
-"""
 import io
 import torch
 import torch.nn.functional as F
@@ -11,18 +7,15 @@ from fastapi.responses import JSONResponse
 from PIL import Image
 import cv2
 
-from src.model import UNet, load_model
+from model import UNet, load_model
 
-# --------------------------------------------
-# Config
-# --------------------------------------------
 DEVICE = torch.device("cuda" if torch.cuda.is_available() else
                       "mps" if torch.backends.mps.is_available() else "cpu")
 MODEL_PATH = "models/unet_best.pt"
 IMG_SIZE = (224, 224)
 
 # Load model once at startup
-print("🔧 Loading UNet model for inference...")
+print("Loading UNet model for inference...")
 model = load_model(UNet, MODEL_PATH, device=DEVICE, out_channels=1)
 model.eval()
 
@@ -48,9 +41,6 @@ def postprocess_mask(pred):
     return mask
 
 
-# --------------------------------------------
-# Endpoint
-# --------------------------------------------
 @app.post("/predict")
 async def predict(file: UploadFile = File(...)):
     try:
