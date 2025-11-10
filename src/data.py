@@ -6,7 +6,7 @@ import torch
 from torch.utils.data import DataLoader,Dataset
 from torchvision import transforms
 device = torch.device("cuda" if torch.cuda.is_available() else
-                      "mps" if torch.backend.mps.is_available() else "cpu")
+                      "mps" if torch.backends.mps.is_available() else "cpu")
 """
 Train_Images = dataset/train/images
 Val_Images = dataset/val/images
