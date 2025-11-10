@@ -83,7 +83,6 @@ def visualize_prediction(image, mask, save_path=None):
     plt.show()
 
 def main():
-    """Command line usage"""
     parser = argparse.ArgumentParser(description='Road Segmentation Prediction')
     parser.add_argument('--model', type=str, required=True, 
                        help='Path to the trained model file (.pth)')
