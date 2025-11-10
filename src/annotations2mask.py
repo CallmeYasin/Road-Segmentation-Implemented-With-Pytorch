@@ -1,5 +1,3 @@
-"""Make Mask From Annotations"""
-
 import os
 from pathlib import Path
 import cv2
@@ -34,7 +32,7 @@ def make_binary_masks(image_list, split_name, mask_dir):
 
         img = cv2.imread(str(img_file))
         if img is None:
-            print(f"⚠️ Could not read image: {img_file}")
+            print(f"Could not read image: {img_file}")
             continue
 
         h, w = img.shape[:2]
@@ -42,7 +40,7 @@ def make_binary_masks(image_list, split_name, mask_dir):
 
         if not label_file.exists():
             cv2.imwrite(str(mask_dir / f"{img_file.stem}.png"), mask)
-            print(f"⚠️ No label found for {img_file.name}, saved empty mask.")
+            print(f"No label found for {img_file.name}, saved empty mask.")
             continue
 
         with open(label_file, "r") as f:
@@ -63,8 +61,9 @@ def make_binary_masks(image_list, split_name, mask_dir):
         out_path = mask_dir / f"{img_file.stem}.png"
         cv2.imwrite(str(out_path), mask)
 
-    print(f"✅ Polygon masks saved for {split_name} in: {mask_dir}")
+    print(f"binary masks saved for {split_name} in: {mask_dir}")
 
 # --- Run for train and val splits ---
 make_binary_masks(image_train_path_list, "train", mask_train_path)
 make_binary_masks(image_val_path_list, "val", mask_val_path)
+
