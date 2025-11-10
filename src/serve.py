@@ -22,9 +22,6 @@ model.eval()
 # Create FastAPI app
 app = FastAPI(title="Road Segmentation API", version="1.0")
 
-# --------------------------------------------
-# Helper: preprocess and predict
-# --------------------------------------------
 def preprocess_image(file_bytes):
     img = Image.open(io.BytesIO(file_bytes)).convert("RGB")
     img = img.resize(IMG_SIZE)
