@@ -111,7 +111,7 @@ Project has been completed!
 ### - Binary masks: 0 = background, 1 = road
 ## **How to use?**
 ```
-You should download dataset from here or kaggle
+You should download dataset from here or kaggle  
 ↓
 1. If you downloaded dataset from kaggle you should put train images in dataset\train\images and val images in dataset\val\images and then run src\annotaions2mask.py to automaticly creat masks
 2. If you downloaded dataset from here,there is no need to run src/annotations2mask.py
