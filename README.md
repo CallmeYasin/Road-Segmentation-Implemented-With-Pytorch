@@ -77,4 +77,42 @@ Use Fast API and use for prediction
 Project has been completed!
 ```
 
-## *Let see what is a road segmentation task*
+## 📖*Road Project Directory*      
+```
+├───.dist
+├───dataset
+│   ├───train
+│   │   ├───annotations
+│   │   ├───images
+│   │   └───masks
+│   └───val
+│       ├───annotations
+│       ├───images
+│       └───masks
+├───models
+├───notebook
+├───Pics
+│   └───model architecture
+├───src
+│   └───__pycache__
+└───test
+```
+# *Dataset*
+## 1. 📝 **Annotations**
+## **What are they?**
+### - Structured information about the image
+### - Can be in various formats: JSON, XML, TXT, etc.
+### - Contain metadata, bounding boxes, polygons, etc
+## 2. 🎭 **Masks (Segmentation Masks)**
+## **What are they?**
+### - Pixel-level labels stored as images
+### - Each pixel value represents a class
+### - Same dimensions as the original image
+### - Binary masks: 0 = background, 1 = road
+## **How to use?**
+```
+You should download dataset from here or kaggle
+↓
+1. If you downloaded dataset from kaggle you should put train images in dataset\train\images and val images in dataset\val\images and then run src\annotaions2mask.py to automaticly creat masks
+2. If you downloaded dataset from here,there is no need to run src/annotations2mask.py
+```
