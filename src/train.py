@@ -97,8 +97,7 @@ def main():
         TRAIN_IMG_DIR, TRAIN_MASK_DIR,
         VAL_IMG_DIR, VAL_MASK_DIR,
         batch_size=args.batch_size,
-        num_workers=NUM_WORKERS
-    )
+        num_workers=NUM_WORKERS)
 
     print(f"Using device: {DEVICE}")
 
