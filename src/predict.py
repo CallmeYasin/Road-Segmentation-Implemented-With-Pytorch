@@ -84,7 +84,7 @@ def visualize_prediction(image, mask, save_path=None):
 
 def main():
     parser = argparse.ArgumentParser(description='Road Segmentation Prediction')
-    parser.add_argument('--model', type=str, required=True, 
+    parser.add_argument('--model', type=str,default=r"Road-Segmentation-Implemented-With-Pytorch\models\unet_best.pth", 
                        help='Path to the trained model file (.pth)')
     parser.add_argument('--image', type=str, required=True,
                        help='Path to the input image file')
