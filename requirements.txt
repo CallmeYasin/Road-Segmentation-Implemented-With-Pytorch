@@ -14,3 +14,6 @@ torch-summary>=1.4.5
 
 # Jupyter / notebook helpers (optional but matches your env)
 ipython==7.34.0
+
+#Take project to product
+streamlit==1.51.0
