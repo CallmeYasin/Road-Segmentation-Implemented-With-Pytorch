@@ -82,7 +82,7 @@ def validate_one_epoch(model, loader, criterion):
 # ----------------------------
 def main():
     parser = argparse.ArgumentParser(description="Road Segmentation Training")
-    parser.add_argument('--model', type=str, default=None,
+    parser.add_argument('--model', type=str, default=r"Road-Segmentation-Implemented-With-Pytorch\models\unet_best.pth",
                         help='Path to pretrained model (.pth) if available')
     parser.add_argument("--lr", type=float, default=1e-4,
                         help="Learning rate (default: 1e-4)")
