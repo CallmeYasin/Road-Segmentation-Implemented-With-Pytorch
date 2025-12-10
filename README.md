@@ -116,3 +116,14 @@ You should download dataset from here or kaggle
 1. If you downloaded dataset from kaggle you should put train images in dataset\train\images and val images in dataset\val\images and then run src\annotaions2mask.py to automaticly creat masks
 2. If you downloaded dataset from here,there is no need to run src/annotations2mask.py
 ```
+
+# *How To Use?*
+## If U Want To Train
+### - U can run train.py and even run with command line
+## If U Want To Predict
+### - U can run predict.py even with command line
+## If U Want A UI
+### - U can run streamlit.py with this command in command line(terminal)
+``` 
+streamlit run .\src\streamlit_UI.py
+```
