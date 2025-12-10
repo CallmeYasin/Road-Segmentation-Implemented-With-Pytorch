@@ -69,7 +69,7 @@ def main():
     st.write("Upload an image to segment roads")
     
     # Use the same model path that works in predict.py
-    model_path = r"C:\Users\Parsian 09352252262\Downloads\unet_best.pth"
+    model_path = r"Road-Segmentation-Implemented-With-Pytorch\models\unet_best.pth"
     
     # Load model
     model = load_model_cached(model_path)
@@ -154,4 +154,5 @@ def main():
             st.error(f"Full error: {repr(e)}")
 
 if __name__ == "__main__":
+
     main()
