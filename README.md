@@ -72,7 +72,7 @@ Define two metrics,IoU(Intersection over Union) and Dice score for evaluation
 ↓
 Train model to learn patterns and decrease loss and increase dice score
 ↓
-Use Fast API and use for prediction
+Use A UI For Better Visualization And Prediction
 ↓
 Project has been completed!
 ```
