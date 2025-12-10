@@ -21,10 +21,6 @@ TRAIN_MASK_DIR = "dataset/train/masks"
 VAL_IMG_DIR = "dataset/val/images"
 VAL_MASK_DIR = "dataset/val/masks"
 
-
-# ----------------------------
-# Helper: compute pos_weight
-# ----------------------------
 def compute_pos_weight(loader):
     """Estimate class imbalance ratio for BCEWithLogitsLoss."""
     pos, neg = 0.0, 0.0
@@ -37,9 +33,6 @@ def compute_pos_weight(loader):
     ratio = neg / (pos + 1e-6)
     return torch.tensor([ratio])
 
-# ----------------------------
-# Training / Validation Epochs
-# ----------------------------
 def train_one_epoch(model, loader, optimizer, criterion):
     model.train()
     epoch_loss, epoch_dice = 0, 0
@@ -77,9 +70,6 @@ def validate_one_epoch(model, loader, criterion):
     return val_loss / len(loader), val_dice / len(loader)
 
 
-# ----------------------------
-# Main training entry point
-# ----------------------------
 def main():
     parser = argparse.ArgumentParser(description="Road Segmentation Training")
     parser.add_argument('--model', type=str, default=r"Road-Segmentation-Implemented-With-Pytorch\models\unet_best.pth",
